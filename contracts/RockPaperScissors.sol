@@ -102,15 +102,6 @@ contract RockPaperScissors is ERC20Interface {
     bool public player1_chosen;
     bool public player2_chosen;
 
-    //@dev modifier to check if msg.sender is a registered player
-    modifier isPlayer() {
-        require(
-            msg.sender == player1 || msg.sender == player2,
-            "Msg.sender is not a registered player"
-        );
-        _;
-    }
-
     //@dev checks if block.timestamp is greater than endtime of the game
     modifier onlyIfEnded() {
         require(
